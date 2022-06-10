@@ -35,4 +35,4 @@ jobs:
           context: .
           file: ./EquiposElectronicosAzure/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB }}/appPractica:latest
+          tags: ${{ secrets.DOCKER_HUB }}/apppractica:latest
