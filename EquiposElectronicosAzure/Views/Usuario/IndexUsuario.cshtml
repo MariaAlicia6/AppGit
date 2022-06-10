@@ -1,0 +1,68 @@
+﻿@model IEnumerable<EquiposElectronicosAzure.Models.equiposdb>
+
+@{
+    ViewBag.Title = "IndexUsuario";
+}
+
+<br /><br /><h2> Tienda de Electrodomésticos</h2>
+
+<p>
+    @Html.ActionLink("Consulta de equipos", "View")
+</p>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <font color="green">@ViewBag.mensaje</font>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.Foto)" width="200px" />
+            </td>
+
+            <td>
+                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="WLFGCQ582TPVW">
+                    <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </td>
+            <td>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="XK2UULVNMBAVE">
+                    <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                </form>
+
+            </td>
+            <td>
+
+                <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Flocalhost%3A50748%2FUsuario%2FIndexUsuario&width=90&layout=button&action=like&size=small&share=false&height=65&appId=610658066236106" width="90" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <td>
+        </tr>
+
+    }
+</table>

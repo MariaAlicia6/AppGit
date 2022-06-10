@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Contacto";
+}
+<br /><br /><h2> Tienda de electrodomésticos nuevos y usados</h2>
+
+            <address>
+                C. Hacienda La Concepción,9514<br />
+                <a href="~/Views/Home/Contact.cshtml"></a>
+                Las Haciendas<br />
+                <abbr title="Phone">P:</abbr>
+                256-527-82-23
+            </address>
+
+<address>
+    <strong> E-mail: gutierrezmariaalicia1990@gmail.com</strong>
+</address>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Maps JavaScript API</title>
+    <style>
+        #map {
+            height: 100%;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"> </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1647913033341!6m8!1m7!1sv38G7IikYHJIZYCkOouo6w!2m2!1d31.57150676357409!2d-106.3961597417555!3f56.533837401019106!4f-3.3493411482210576!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <script>
+
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 31.44, lng: -106.29 },
+                zoom: 13,
+            });
+            var marker = new google.maps.Marker({
+                position: { lat: 31.44, lng: -106.29 },
+                map: map,
+                title: 'Equipos electrodomésticos'
+            });
+        }
+
+
+    </script>
+</body>
+</html>
